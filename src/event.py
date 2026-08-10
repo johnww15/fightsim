@@ -1,15 +1,15 @@
 class Event(object):
     def __init__(self):
-        self.Timestamp = 0.0
-        self.EventType = ''
-        self.Source = None
-        self.Target = None
-        self.Action = ''
+        self.timestamp = 0.0
+        self.event_type = ''
+        self.source = None
+        self.target = None
+        self.action = ''
 
 def create_event(timestamp, event_type, source, target, action):
     event = Event()
-    event.Timestamp = timestamp
-    event.EventType = event_type
-    event.Source = source
-    event.Target = target
-    event.Action = action
+    event.timestamp = timestamp
+    event.event_type = event_type
+    event.source = source
+    event.target = target
+    event.action = action

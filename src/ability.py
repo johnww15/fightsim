@@ -1,21 +1,21 @@
 class Ability(object):
     def __init__(self):
-        self.Name = ''
-        self.BaseDamage = 0
-        self.Cooldown = 0.0
-        self.CastTime = 0.0
-        self.ManaCost = 0
+        self.name = ''
+        self.base_damage = 0
+        self.cooldown = 0.0
+        self.cast_time = 0.0
+        self.mana_cost = 0
 
 class AutoAttack(Ability):
     def __init__(self, strength, dexterity):
         super().__init__()
-        self.Name = 'Auto Attack'
-        self.damageCoefficient = 10.0
-        self.Damage = self.calculate_damage(strength)
-        self.AtkInterval = self.calculate_attack_interval(dexterity)
+        self.name = 'Auto Attack'
+        self.damage_coefficient = 10.0
+        self.damage = self.calculate_damage(strength)
+        self.atk_interval = self.calculate_attack_interval(dexterity)
 
     def calculate_damage(self, strength):
-        return (strength * self.damageCoefficient)
+        return (strength * self.damage_coefficient)
 
     def calculate_attack_interval(self, dexterity):
         base_interval = 3.0  # Base attack interval in seconds
