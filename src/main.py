@@ -1,6 +1,5 @@
 from character import Tank, Enemy
 from ability import AutoAttack
-from event import create_event
 from simulation import start_fight
 
 print("-----Simulator run-----")
@@ -10,6 +9,6 @@ tank = Tank()
 enemy = Enemy()
 enemy.add_ability(AutoAttack(enemy.strength, enemy.dexterity))
 tank.add_ability(AutoAttack(tank.strength, tank.dexterity))
-##start_fight(Tank(), Enemy())
+start_fight(tank, enemy)
 
 print("-----Simulator end-----")

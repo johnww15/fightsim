@@ -1,20 +1,11 @@
-from ability import *
-from character import *
+from ability import Ability
+from character import Character
 
 class Event(object):
-    def __init__(self):
-        self.timestamp = 0.0
-        self.ability = None
-        self.source = None
-        self.target = None
+    def __init__(self, timestamp: float, ability: Ability, source: Character, target: Character) -> None:
+        self.timestamp = timestamp
+        self.ability = ability
+        self.source = source
+        self.target = target
         self.event_type = ''
         self.action = ''
-
-
-def create_event(timestamp, ability, source, target):
-    event = Event()
-    event.timestamp = timestamp
-    event.ability = ability
-    event.source = source
-    event.target = target
-    return event
