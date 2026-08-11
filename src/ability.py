@@ -12,7 +12,12 @@ class AutoAttack(Ability):
         self.name = 'Auto Attack'
         self.damage_coefficient = 10.0
         self.damage = self.calculate_damage(strength)
-        self.atk_interval = self.calculate_attack_interval(dexterity)
+        self.action_time = self.calculate_attack_interval(dexterity)
+        self.event_pattern = [{
+                                "event_type": "ATTACK",
+                                "timing": "END",
+                                "action": "DEAL_DAMAGE"
+                            }]
 
     def calculate_damage(self, strength):
         return (strength * self.damage_coefficient)

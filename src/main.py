@@ -10,6 +10,6 @@ tank = Tank()
 enemy = Enemy()
 enemy.add_ability(AutoAttack(enemy.strength, enemy.dexterity))
 tank.add_ability(AutoAttack(tank.strength, tank.dexterity))
-start_fight(Tank(), Enemy())
+##start_fight(Tank(), Enemy())
 
 print("-----Simulator end-----")
