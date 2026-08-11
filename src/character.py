@@ -7,10 +7,10 @@ class Character:
         self.name: str | None = None
         self.max_health: float = 1000.0
         self.current_health: float = 1000.0
+        self.max_mana: int = 0
+        self.current_mana: int = 0
         self.strength: int = 0
         self.dexterity: int = 0
-        self.max_mana: int = 0
-        self.mana: int = 0
         self.abilities: list[Ability] = []
 
     def add_ability(self, ability: Ability) -> None:
@@ -24,6 +24,8 @@ class Tank(Character):
         super().__init__()
         self.name = 'Tank'
         self.max_health = 1000
+        self.max_mana = 100
+        self.current_mana = 100
         self.current_health = 1000
         self.strength = 10
         self.dexterity = 0
@@ -33,6 +35,8 @@ class Enemy(Character):
         super().__init__()
         self.name = 'Enemy'
         self.max_health = 1000
+        self.max_mana = 100
+        self.current_mana = 100
         self.current_health = 1000
         self.strength = 10
         self.dexterity = 10

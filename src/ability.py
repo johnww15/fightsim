@@ -32,3 +32,19 @@ class AutoAttack(Ability):
         interval_reduction = dexterity * dexterity_factor
         attack_interval = max(base_interval - interval_reduction, 0.1)  # Ensure a minimum interval of 0.1 seconds
         return attack_interval
+
+class ShieldCrash(Ability):
+    def __init__(self, strength: int) -> None:
+        super().__init__('Shield Crash')
+        self.damage_coefficient = 20.0
+        self.damage = self.calculate_damage(strength)
+        self.action_time = 2.0
+        self.mana_cost = 50
+        self.event_pattern = [{
+                                "event_type": "ATTACK",
+                                "timing": "END",
+                                "action": "DEAL_DAMAGE"
+                            }]
+
+    def calculate_damage(self, strength: int) -> float:
+        return (strength * self.damage_coefficient)
