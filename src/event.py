@@ -1,11 +1,17 @@
 from ability import Ability
 from character import Character
 
-class Event(object):
-    def __init__(self, timestamp: float, ability: Ability, source: Character, target: Character) -> None:
-        self.timestamp = timestamp
-        self.ability = ability
-        self.source = source
-        self.target = target
-        self.event_type = ''
-        self.action = ''
+class Event:
+    def __init__(
+        self,
+        timestamp: float,
+        ability: Ability,
+        source: Character,
+        target: Character,
+    ) -> None:
+        self.timestamp: float = timestamp
+        self.ability: Ability = ability
+        self.source: Character = source
+        self.target: Character = target
+        self.event_type: str | None = None
+        self.action: str | None = None

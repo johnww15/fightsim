@@ -1,14 +1,16 @@
 from ability import Ability
 
-class Character(object):
-    def __init__(self) -> None:
-        self.name = ''
-        self.max_health = 1000.0
-        self.current_health = 1000.0
-        self.strength = 0
-        self.dexterity = 0
-        self.max_mana = 0
-        self.mana = 0
+class Character:
+    def __init__(
+            self
+    ) -> None:
+        self.name: str | None = None
+        self.max_health: float = 1000.0
+        self.current_health: float = 1000.0
+        self.strength: int = 0
+        self.dexterity: int = 0
+        self.max_mana: int = 0
+        self.mana: int = 0
         self.abilities: list[Ability] = []
 
     def add_ability(self, ability: Ability) -> None:

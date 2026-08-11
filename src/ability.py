@@ -1,12 +1,15 @@
-class Ability(object):
-    def __init__(self, name: str) -> None:
-        self.name = name
-        self.base_damage = 0
-        self.cooldown = 0.0
-        self.cast_time = 0.0
-        self.mana_cost = 0
-        self.damage = 0.0
-        self.action_time = 0.0
+class Ability:
+    def __init__(
+            self,
+            name: str | None = None
+    ) -> None:
+        self.name: str | None = name
+        self.base_damage: float = 0.0
+        self.cooldown: float = 0.0
+        self.cast_time: float = 0.0
+        self.mana_cost: int = 0
+        self.damage: float = 0.0
+        self.action_time: float = 0.0
 
 class AutoAttack(Ability):
     def __init__(self, strength: int, dexterity: int) -> None:
